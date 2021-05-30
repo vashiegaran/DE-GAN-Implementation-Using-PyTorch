@@ -24,10 +24,10 @@ the documents.
 
 * Dataset
 * 
-![Blur_Image(image/1.png)
+![Dataset](image/1.png)
 
 * After patches are created
-![Blur_Image(image/2.png)
+![Patch](image/2.png)
 
 # 3. Architecture
 * Generator
