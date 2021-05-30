@@ -3,6 +3,12 @@ Document Enhancement Generative Adversarial Networks
 
 This Implementation is based on https://arxiv.org/abs/2010.08764 
 
+Inorder to download the dataset:
+1. !gdown --id 0B9eZ-svj9om8Yjc1YWYwZTUtYTNhOS00ZWE2LTliOGItM2UzMGM2M2VkNWRj
+2. !unzip /content/the-iupr-dataset-of-camera-captured-documents-cbdar2011.zip
+
+Run these two on your terminals
+
 # 1. Introduction
 
   This problem is considered as image to image translation task where the goal is to generate a clean
