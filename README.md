@@ -27,24 +27,40 @@ the documents.
 ![Dataset](image/2.png)
 
 * After patches are created
+
+
 ![Patch](image/1.png)
 
 # 3. Architecture
 * Generator
+
 ![Gen](image/4.png)
   
   The generator model consist of sequence of convolutional layers and transpose convolutional layers.
-Convolutional layers perform downsampling until certain layer. Then, the process is reversed in transpose convolutional layer where a sequence of layers perform upsampling. This process is called encoderdecoder and it has its disadvantage which is:
+  Convolutional layers perform downsampling until certain layer. Then, the process is reversed in transpose convolutional layer where a sequence of layers perform upsampling. This process is called encoderdecoder and it has its disadvantage which is:
 
-1. During convolution process, information is lost, thus affecting the transpose convolutional process
-and the model will have hard time to generalise the data.
-2. Feature maps of input and output share huge amount of pixel which is unwanted information. It
-is a waste of time and computational power.
+  1. During convolution process, information is lost, thus affecting the transpose convolutional process
+  and the model will have hard time to generalise the data.
+  2. Feature maps of input and output share huge amount of pixel which is unwanted information. It
+  is a waste of time and computational power.
 
-Due to this reasons, skip connections are added where it will copy and concatenate output from
-the encoder to decoder to randomise the data and prevent gradient vanishing problems. Some batch
-normalization layers are added to ease the training of the model.
-  
+  Due to this reasons, skip connections are added where it will copy and concatenate output from
+  the encoder to decoder to randomise the data and prevent gradient vanishing problems. Some batch
+  normalization layers are added to ease the training of the model.
+ 
+* Discriminator
+![Dis](image/3.png)
+
+
+  The discriminator contains Fully convolutional network composed of 6 convolutional layers .Discriminator take two inputs which is the generated input from    
+  generator network and the ground truth
+  image. The two image is then concatenated together in a 256x25x2 shape tensor and the output is
+  16 x 16 x 1 matrix in the last layer. This matrix contains the probability of predicting which one is
+  fake. If the probability is close to 1, it will predict the clean image as the ground truth and if it is 0,
+  It will predict the generated image as the ground truth. During training , The produced images are
+  fed to the discriminator with the ground truth patches and the degraded ones .After the training the
+  discriminator is no longer used for inference.
+ 
 # 4. Training
 The model is trained using GTX 1050 2GB memory GPU power. The number of epochs used for this
 model is 150. The learning rate is 0.0002. Due to resource power, I had to train for 150 epochs which I
