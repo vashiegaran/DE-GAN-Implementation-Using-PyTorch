@@ -49,6 +49,7 @@ the documents.
   normalization layers are added to ease the training of the model.
  
 * Discriminator
+* 
 ![Dis](image/3.png)
 
 
