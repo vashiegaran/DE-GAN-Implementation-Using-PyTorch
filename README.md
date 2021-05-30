@@ -23,15 +23,15 @@ The dataset contains written documents and patches is created by cropping/zoomin
 the documents.
 
 * Dataset
-* 
-![Dataset](image/1.png)
+ 
+![Dataset](image/2.png)
 
 * After patches are created
-![Patch](image/2.png)
+![Patch](image/1.png)
 
 # 3. Architecture
 * Generator
-  ![Blur_Image(image/4.png)
+![Gen](image/4.png)
   
   The generator model consist of sequence of convolutional layers and transpose convolutional layers.
 Convolutional layers perform downsampling until certain layer. Then, the process is reversed in transpose convolutional layer where a sequence of layers perform upsampling. This process is called encoderdecoder and it has its disadvantage which is:
@@ -53,7 +53,7 @@ the 150th epoch and has potential to predict better if it is trained for high nu
 
 
 # 5. Inference
-  ![Blur_Image(image/5.png)
+![Result](image/5.png)
 
 
 
