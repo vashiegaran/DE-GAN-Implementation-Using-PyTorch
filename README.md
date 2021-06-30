@@ -20,7 +20,7 @@ image is fake. Both network will compete each other to win. Discriminator will i
 of the image being fake and the generator will improve to generate an image similar to the ground
 truth.
 
-# 1. Objective
+# 2. Objective
 
 Given a degraded/blur text image as input to the trained GAN model, a enhanced/clean image is produced.
 
