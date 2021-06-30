@@ -24,7 +24,7 @@ truth.
 
 Given a degraded/blur text image as input to the trained GAN model, a enhanced/clean image is produced.
 
- # 2. Training Dataset
+ # 3. Training Dataset
 The dataset contains written documents and patches is created by cropping/zooming certain parts of
 the documents.
 
@@ -37,7 +37,7 @@ the documents.
 
 ![Patch](image/1.png)
 
-# 3. Architecture
+# 4. Architecture
 * Generator
 
 ![Gen](image/4.png)
@@ -68,14 +68,14 @@ the documents.
   fed to the discriminator with the ground truth patches and the degraded ones .After the training the
   discriminator is no longer used for inference.
  
-# 4. Training
+# 5. Training
 The model is trained using GTX 1050 2GB memory GPU power. The number of epochs used for this
 model is 150. The learning rate is 0.0002. Due to resource power, I had to train for 150 epochs which I
 considered is low for the model to be well trained. I have observed the loss was still decreasing during
 the 150th epoch and has potential to predict better if it is trained for high number of epochs.
 
 
-# 5. Inference
+# 6. Inference
 ![Result](image/5.png)
 
 
